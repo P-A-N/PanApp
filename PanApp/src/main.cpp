@@ -3,7 +3,10 @@
 
 //========================================================================
 int main( ){
+	ofJson json = ofLoadJson("setting.json");
 	ofApp::RunMode mode = ofApp::SANDBOX;
+	if (json.at("is_production"))
+		mode = ofApp::PRODUCTION;
 
 	int width = 1920;
 	int height = 1080;
